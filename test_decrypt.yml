@@ -1,0 +1,10 @@
+- name: Test Ansible Vault Decryption
+  hosts: localhost
+  tasks:
+    - name: Load the secrets
+      include_vars:
+        file: secrets.yml
+
+    - name: Print the decrypted secret
+      debug:
+        msg: "The API key is {{ api_key }}"
